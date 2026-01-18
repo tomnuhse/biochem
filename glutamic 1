@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>D-Glutamic Acid – JSmol Viewer</title>
+
+<script type="text/javascript" src="https://chemapps.stolaf.edu/jmol/jsmol/JSmol.min.js"></script>
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  #appdiv {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+</head>
+<body>
+
+<div id="appdiv"></div>
+
+<script>
+var Info = {
+  width: "100%",
+  height: "100%",
+  debug: false,
+  color: "white",
+  use: "HTML5",
+  j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s",
+  script: `
+    load https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/CID/439260/SDF?record_type=3d;
+    set zoomlarge false;
+    spacefill off;
+    wireframe off;
+    cartoons off;
+    select all;
+    wireframe 0.15;
+    spacefill 20%;
+    zoom 120;
+  `
+};
+
+Jmol.getApplet("jmolApplet0", Info);
+document.getElementById("appdiv").innerHTML = jmolApplet0._code;
+</script>
+
+</body>
+</html>

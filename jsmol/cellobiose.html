@@ -13,6 +13,9 @@
 <div id="jsmolApplet" style="width:450px; height:450px;"></div>
 
 <script>
+  // Prevent JSmol from auto‑inserting the applet
+  Jmol.setDocument(0);
+
   var Info = {
     width: 450,
     height: 450,
@@ -27,7 +30,8 @@
     `
   };
 
-Jmol.getApplet("jsmolApplet", Info);
+  var applet = Jmol.getApplet("jsmolApplet", Info);
+  document.getElementById("jsmolApplet").innerHTML = Jmol.getAppletHtml(applet);
 </script>
 
 </body>

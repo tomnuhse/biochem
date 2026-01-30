@@ -10,7 +10,7 @@
 
 <body style="margin:0; padding:0;">
 
-<div id="jsmol" style="width:450px; height:450px;"></div>
+<div id="jsmolApplet" style="width:450px; height:450px;"></div>
 
 <script>
   var Info = {
@@ -27,9 +27,7 @@
     `
   };
 
-  var applet = Jmol.getApplet("jsmolApplet", Info);
-  Jmol.setDocument(0);  // prevents auto‑insertion
-  document.getElementById("jsmol").innerHTML = Jmol.getAppletHtml(applet);
+Jmol.getApplet("jsmolApplet", Info);
 </script>
 
 </body>

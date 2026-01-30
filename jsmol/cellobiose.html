@@ -10,27 +10,9 @@
 
 <body style="margin:0; padding:0;">
 
-<div id="jsmol" style="width: 450px; height: 450px; margin: auto;"></div>
+<div id="jsmol" style="width:450px; height:450px;"></div>
 
-<script>
-  var Info = {
-    width: 450,
-    height: 450,
-    debug: false,
-    color: "white",
-    j2sPath: "j2s",   // this matches your folder structure
-    script: `
-      load Cellobiose.sdf;
-      wireframe 0.2;
-      spacefill 23%;
-      cartoon off;
-      zoom 120;
-    `
-  };
-
-  Jmol.getApplet("jsmolApplet", Info);
-  document.getElementById("jsmol").innerHTML = Jmol.getAppletHtml("jsmolApplet");
-</script>
+<script> var Info = { width: 450, height: 450, debug: false, color: "white", j2sPath: "j2s", script: ` load Cellobiose.sdf; wireframe 0.15; spacefill 23%; zoom 120; ` }; var applet = Jmol.getApplet("jsmolApplet", Info); document.getElementById("jsmol").innerHTML = Jmol.getAppletHtml(applet); </script>
 
 </body>
 </html>

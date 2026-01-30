@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Cellobiose Viewer</title>
+
+  <!-- Load the JSmol engine -->
+  <script type="text/javascript" src="JSmol.min.js"></script>
+</head>
+
+<body style="margin:0; padding:0;">
+
+<div id="jsmol" style="width: 450px; height: 450px; margin: auto;"></div>
+
+<script>
+  var Info = {
+    width: 450,
+    height: 450,
+    debug: false,
+    color: "white",
+    j2sPath: "j2s",   // this matches your folder structure
+    script: `
+      load Cellobiose.sdf;
+      wireframe 0.15;
+      spacefill off;
+      cartoon off;
+      zoom 120;
+    `
+  };
+
+  Jmol.getApplet("jsmolApplet", Info);
+  document.getElementById("jsmol").innerHTML = Jmol.getAppletHtml("jsmolApplet");
+</script>
+
+</body>
+</html>
